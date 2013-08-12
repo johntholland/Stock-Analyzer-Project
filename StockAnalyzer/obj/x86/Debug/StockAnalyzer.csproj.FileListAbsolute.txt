@@ -1,0 +1,1 @@
+D:\Stock-Analyzer-Project\StockAnalyzer\obj\x86\Debug\StockAnalyzer.csproj.ResolveComReference.cache
