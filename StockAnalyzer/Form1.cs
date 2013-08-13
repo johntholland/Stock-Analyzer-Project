@@ -8,25 +8,50 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using HtmlAgilityPack;
-using Microsoft.Office.Interop.Excel;
+//using Microsoft.Office.Interop.Excel;
 using System.Reflection;
 
 namespace StockAnalyzer
 {
     public partial class Form1 : Form
     {
-        private Microsoft.Office.Interop.Excel.Application excel;
+        //private Microsoft.Office.Interop.Excel.Application excel;
         private bool containsErrors = false;
+        static List<string> SymbolsList;
 
         public Form1()
         {
             InitializeComponent();
-            excel = new Microsoft.Office.Interop.Excel.Application();
+            //excel = new Microsoft.Office.Interop.Excel.Application();
 
-            if (excel == null)
+            //if (excel == null)
+            //{
+            //    MessageBox.Show("EXCEL could not be started. Check that your office installation and project references are correct.");
+            //    return;
+            //}
+        }
+
+        public static void parseSymbols()
+        {
+            try
             {
-                MessageBox.Show("EXCEL could not be started. Check that your office installation and project references are correct.");
-                return;
+                SymbolsList = new List<string>();
+                using (StreamReader sr = new StreamReader("symbols.txt"))
+                {
+
+                    string line;
+                    while( (line = sr.ReadLine()) != null)
+                    {
+                    String[] templist = line.Split('\t');
+                    SymbolsList.Add(templist[0]);
+                    }
+
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("The file could not be read:");
+                Console.WriteLine(e.Message);
             }
         }
 
@@ -37,6 +62,15 @@ namespace StockAnalyzer
             toolStripStatusLabel1.Visible = false;
             String currentPath = Directory.GetCurrentDirectory();
 
+            parseSymbols();
+            foreach(string str in SymbolsList)
+            {
+                Console.WriteLine(str);
+            }
+            Console.WriteLine("");
+
+
+            /*
 
             OpenFileDialog op = new OpenFileDialog();
             op.InitialDirectory = currentPath;
@@ -49,10 +83,10 @@ namespace StockAnalyzer
                 return;
             }
 
-            Workbook wb = excel.Workbooks.Open(currentPath);
+            //Workbook wb = excel.Workbooks.Open(currentPath);
 
-            Worksheet ws = (Worksheet)wb.Worksheets[1];
-            ws.Visible = XlSheetVisibility.xlSheetVisible;
+            //Worksheet ws = (Worksheet)wb.Worksheets[1];
+            //ws.Visible = XlSheetVisibility.xlSheetVisible;
 
             if (ws == null)
             {
@@ -208,6 +242,7 @@ namespace StockAnalyzer
                     toolStripStatusLabel1.Visible = true;
                 }
             }
+             */
         }
         //private void createTextListing()
         //{

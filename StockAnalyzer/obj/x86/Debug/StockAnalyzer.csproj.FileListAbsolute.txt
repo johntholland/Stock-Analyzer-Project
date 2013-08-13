@@ -1,1 +1,13 @@
 D:\Stock-Analyzer-Project\StockAnalyzer\obj\x86\Debug\StockAnalyzer.csproj.ResolveComReference.cache
+C:\Users\johnh\Documents\GitHub\Stock-Analyzer\StockAnalyzer\obj\x86\Debug\StockAnalyzer.csproj.ResolveComReference.cache
+C:\Users\johnh\Documents\GitHub\Stock-Analyzer\StockAnalyzer\bin\Debug\StockAnalyzer.exe
+C:\Users\johnh\Documents\GitHub\Stock-Analyzer\StockAnalyzer\bin\Debug\StockAnalyzer.pdb
+C:\Users\johnh\Documents\GitHub\Stock-Analyzer\StockAnalyzer\bin\Debug\HtmlAgilityPack.dll
+C:\Users\johnh\Documents\GitHub\Stock-Analyzer\StockAnalyzer\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\johnh\Documents\GitHub\Stock-Analyzer\StockAnalyzer\bin\Debug\HtmlAgilityPack.xml
+C:\Users\johnh\Documents\GitHub\Stock-Analyzer\StockAnalyzer\obj\x86\Debug\StockAnalyzer.csprojResolveAssemblyReference.cache
+C:\Users\johnh\Documents\GitHub\Stock-Analyzer\StockAnalyzer\obj\x86\Debug\StockAnalyzer.Form1.resources
+C:\Users\johnh\Documents\GitHub\Stock-Analyzer\StockAnalyzer\obj\x86\Debug\StockAnalyzer.Properties.Resources.resources
+C:\Users\johnh\Documents\GitHub\Stock-Analyzer\StockAnalyzer\obj\x86\Debug\StockAnalyzer.csproj.GenerateResource.Cache
+C:\Users\johnh\Documents\GitHub\Stock-Analyzer\StockAnalyzer\obj\x86\Debug\StockAnalyzer.exe
+C:\Users\johnh\Documents\GitHub\Stock-Analyzer\StockAnalyzer\obj\x86\Debug\StockAnalyzer.pdb

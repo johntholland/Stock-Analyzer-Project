@@ -110,7 +110,6 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Logo.ico" />
     <Content Include="symbols.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
