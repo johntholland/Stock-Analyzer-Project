@@ -171,6 +171,8 @@ namespace StockAnalyzer
                 var totalRevenueAnnual3 = document.DocumentNode.SelectSingleNode("//div[@id='incannualdiv']/table[@id='fs-table']/tbody/tr[3]/td[5]");
                 this.excel.ActiveSheet.Cells[9, 7] = totalRevenueAnnual3.InnerText.Trim();
 
+
+             * 
                 //*[@id="fs-table"]/tbody/tr[28]/td[2]
 
                 //get Net Income 
@@ -182,6 +184,13 @@ namespace StockAnalyzer
                 this.excel.ActiveSheet.Cells[10, 6] = netIncomeAnnual2.InnerText.Trim();
                 var netIncomeAnnual3 = document.DocumentNode.SelectSingleNode("//div[@id='incannualdiv']/table[@id='fs-table']/tbody/tr[28]/td[5]");
                 this.excel.ActiveSheet.Cells[10, 7] = netIncomeAnnual3.InnerText.Trim();
+             * 
+             *              * var stockholderMargin = netIncomeAnnual = totalRevenueAnnual
+             *              //times 4 or 5
+             *              // averageMargin = average of StockholderMargin1-4
+             *              
+             *              
+             * 
 
                 //get dates Total Revenue & Net Income (Quarterly)
                 var datesQuarterly = document.DocumentNode.SelectSingleNode("//div[@id='incinterimdiv']/table[@id='fs-table']/thead/tr/th[2]");
@@ -192,6 +201,9 @@ namespace StockAnalyzer
                 this.excel.ActiveSheet.Cells[20, 8] = datesQuarterly2.InnerText.Trim();
                 var datesQuarterly3 = document.DocumentNode.SelectSingleNode("//div[@id='incinterimdiv']/table[@id='fs-table']/thead/tr/th[5]");
                 this.excel.ActiveSheet.Cells[20, 9] = datesQuarterly3.InnerText.Trim();
+
+
+             * 
 
                 //get Total Revenue (Quarterly)
                 var totalRevenueQuarterly = document.DocumentNode.SelectSingleNode("//div[@id='incinterimdiv']/table[@id='fs-table']/tbody/tr[3]/td[2]");
@@ -214,6 +226,16 @@ namespace StockAnalyzer
                 var netIncomeQuarterly3 = document.DocumentNode.SelectSingleNode("//div[@id='incinterimdiv']/table[@id='fs-table']/tbody/tr[28]/td[5]");
                 this.excel.ActiveSheet.Cells[22, 9] = netIncomeQuarterly3.InnerText.Trim();
 
+             * 
+             *              * 
+             *              var monthStockholderMargin = netIncomeQuarterly = totalRevenueQuarterly
+             *              //times 4 or 5
+             *              // monthAverageMargin = average of StockholderMargin1-4
+             *              //expectedSales = Sum(totalRevenueQuarterly1-4)
+             *              //Profit = monthAverageMargin * expectedSales
+             *              
+             *              //EnterpriseValue = profit * Desired Return
+             * 
                 //get debts Date current as of
                 var currentLiabilitiesDateQuarterly = document.DocumentNode.SelectSingleNode("//div[@id='balinterimdiv']/table[@id='fs-table']/thead/tr/th[2]");
                 this.excel.ActiveSheet.Cells[37, 7] = currentLiabilitiesDateQuarterly.InnerText.Trim();
@@ -225,12 +247,19 @@ namespace StockAnalyzer
                 var currentOtherLiabilitiesQuarterly = document.DocumentNode.SelectSingleNode("//div[@id='balinterimdiv']/table[@id='fs-table']/tbody/tr[30]/td[2]");
                 this.excel.ActiveSheet.Cells[39, 8] = currentOtherLiabilitiesQuarterly.InnerText.Trim();
 
+             * 
+             * 
+             *              //EquityValue = EnterpriseValue - currentLiabilitiesQuarterly
+             * 
                 //get current outstanding shares
                 //*[@id="fs-table"]/tbody/tr[42]/td[2]
                 var currentOutstandingShares = document.DocumentNode.SelectSingleNode("//div[@id='balinterimdiv']/table[@id='fs-table']/tbody/tr[42]/td[2]");
                 this.excel.ActiveSheet.Cells[47, 5] = currentOutstandingShares.InnerText.Trim();
 
-
+                
+             *              //Real Share value = EquityValue/shareCount
+             *              
+             *              //score = price/RealShareValue
                 excel.Visible = true;
                 try
                 {
